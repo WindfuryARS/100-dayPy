@@ -22,6 +22,9 @@ def clockwise():
 
 def clear():
     tim.clear()
+    tim.penup()
+    tim.home()
+    tim.pendown()
 
 screen.listen()
 screen.onkey(key="w", fun=move_forward)
