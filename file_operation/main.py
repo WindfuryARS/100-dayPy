@@ -15,6 +15,6 @@ with open("./Input/Names/invited_names.txt", "r") as invited_names:
         with open("./Input/Letters/starting_letter.txt", "r") as starting_letter:
             letter = starting_letter.read()
             letter = letter.replace("[name]", name)
-            print(letter)
+#            print(letter)
             with open("./Output/ReadyToSend/" + name + ".txt", "w") as new_letter:
                 new_letter.write(letter)
