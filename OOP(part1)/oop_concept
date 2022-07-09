@@ -1,0 +1,107 @@
+class Car:
+    def __init__(self, brand, model, per_month):
+        self.brand = brand
+        self.model = model
+        self.per_month = per_month
+
+    def sales_volume(self):
+        print("The sales volume of {} {} is {} million.".format(self.brand, self.model, self.per_month * 12))
+
+
+car1 = Car('Audi', 'A4', 1)
+print(car1.brand)
+car1.sales_volume()
+
+
+class Circle():
+
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return self.radius * self.radius * 3.14
+
+
+circle1 = Circle(5)
+print(circle1.radius)
+print(circle1.area())
+
+
+# class inheritance
+
+class Animal:
+    def __init__(self):
+        print("Animal is created")
+
+    def speak(self):
+        print("Animal speaking")
+
+    def eat(self):
+        print("Animal eating")
+
+    def sleep(self):
+        print("Animal sleeping")
+
+
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog is created")
+
+    def who_am_i(self):
+        print('I am a dog')
+
+
+mydog = Dog()
+mydog.eat()
+mydog.who_am_i()
+
+
+# polymorphism
+
+class FootballTeam:
+    def __init__(self, name):
+        self.name = name
+
+    def score(self):
+        raise NotImplementedError
+
+
+class Arsenal(FootballTeam):
+    def score(self):
+        print(f"{self.name} scores")
+
+
+class Chelsea(FootballTeam):
+    def score(self):
+        print(f"{self.name} scores")
+
+
+team1 = Arsenal("Arsenal")
+team1.score()
+
+team2 = Chelsea("Chelsea")
+team2.score()
+
+
+# special method
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+    def __len__(self):
+        return len(self.title)
+
+    def __del__(self):
+        print("Book is deleted")
+
+
+book1 = Book('Python', 'guanyjin')
+str(book1)
+print(len(book1))
+del book1
